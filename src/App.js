@@ -1,9 +1,12 @@
 import './App.css';
+import { Header } from './components/layout/Header';
+import { Sidebar } from './components/layout/Sidebar';
 
 export const App = () => {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Header></Header>
+      <Sidebar />
     </div>
   );
 };
