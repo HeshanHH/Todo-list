@@ -1,8 +1,8 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import { firebase_config } from './firebase-config';
-const firebaseConfig = firebase.initializedApp(firebase_config);
-
+const firebaseConfig = firebase.initializeApp(firebase_config);
+console.log(firebaseConfig);
 export { firebaseConfig as firebase };
 
 // const firebase_config = {
