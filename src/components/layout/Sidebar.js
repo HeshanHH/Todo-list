@@ -10,19 +10,19 @@ export const Sidebar = () => {
   return (
     <div className="sidebar" data-testid="sidebar">
       <ul className="sidebar__generic">
-        <li>
+        <li data-testid="inbox" className="inbox">
           <span>
             <FaInbox></FaInbox>
           </span>
           <span>Inbox</span>
         </li>
-        <li>
+        <li data-testid="today" className="today">
           <span>
             <FaRegCalendar></FaRegCalendar>
           </span>
           <span>Today</span>
         </li>
-        <li>
+        <li data-testid="next_7" className="next_7">
           <span>
             <FaRegCalendarAlt></FaRegCalendarAlt>
           </span>
