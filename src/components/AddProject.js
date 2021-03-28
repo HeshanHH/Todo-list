@@ -1,37 +1,42 @@
 import React, { useState } from 'react';
 //import PropTypes from 'prop-types';
 import { firebase } from '../firebase';
-//import { generatePushId } from '../helpers';
+import { generatePushId } from '../helpers/index';
 import { useProjectsValue } from '../context';
 
+// set shouldShow to default as false
 export const AddProject = ({ shouldShow = false }) => {
   const [show, setShow] = useState(shouldShow);
-  const [projectName, setProjectName] = useState('');
+  const [projectName, setProjectName] = useState(''); //  new project
 
-  //const projectId = generatePushId();
-  const { projects, setProjects } = useProjectsValue();
+  const projectId = generatePushId();
+  const { projects, setProjects } = useProjectsValue(); // when we add project we have to update our context
 
-  //   const addProject = () =>
-  //     projectName &&
-  //     firebase
-  //       .firestore()
-  //       .collection('projects')
-  //       .add({
-  //         projectId,
-  //         name: projectName,
-  //         userId: 'jlIFXIwyAL3tzHMtzRbw',
-  //       })
-  //       .then(() => {
-  //         setProjects([...projects]);
-  //         setProjectName('');
-  //         setShow(false);
-  //       });
+  // if there is project we add it to the firebase.
+  const addProject = () =>
+    projectName &&
+    firebase
+      .firestore()
+      .collection('projects')
+      .add({
+        projectId,
+        name: projectName,
+        userId: 'jlIFXIwyAL3tzHMtzRbw',
+      })
+      .then(() => {
+        // after add..
+        setProjects([...projects]);
+        setProjectName(''); // set back to empty.
+        setShow(false);
+      });
 
   return (
     <div className="add-project" data-testid="add-project">
-      {/* {show && (
+      {/* if Show */}
+      {show && (
         <div className="add-project__input" data-testid="add-project-inner">
           <input
+            // when changing this set projectname.
             value={projectName}
             onChange={(e) => setProjectName(e.target.value)}
             className="add-project__name"
@@ -75,7 +80,7 @@ export const AddProject = ({ shouldShow = false }) => {
         tabIndex={0}
       >
         Add Project
-      </span> */}
+      </span>
     </div>
   );
 };
