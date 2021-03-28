@@ -4,7 +4,7 @@ import { Tasks } from '../Tasks';
 export const Content = () => {
   debugger;
   return (
-    <section>
+    <section className="content">
       <Sidebar />
       <Tasks />
     </section>
