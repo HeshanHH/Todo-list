@@ -41,7 +41,7 @@ export const Projects = ({ activeValue = null }) => {
           {/* pass project as a prop */}
           <IndividualProject project={project} />
         </div>
-        {JSON.stringify(projects)}
+        {/* {JSON.stringify(projects)} */}
       </li>
     ))
   );
