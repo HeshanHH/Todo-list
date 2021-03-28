@@ -128,6 +128,7 @@ export const AddTask = ({
             value={task}
             onChange={(e) => setTask(e.target.value)}
           />
+
           <button
             type="button"
             className="add-task__submit"

@@ -20,6 +20,7 @@ export const Header = ({ darkMode, setDarkMode }) => {
                 data-testid="quick-add-task-action"
                 aria-label="Quick add task"
                 type="button"
+                // if you use curlybrases then you can call two or more function calls
                 onClick={() => {
                   setShowQuickAddTask(true);
                   setShouldShowMain(true);
@@ -41,6 +42,7 @@ export const Header = ({ darkMode, setDarkMode }) => {
           </ul>
         </div>
       </nav>
+      {/* // header + button addtask component overlay */}
       <AddTask
         showAddTaskMain={false}
         shouldShowMain={shouldShowMain}
