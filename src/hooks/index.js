@@ -54,6 +54,7 @@ export const useProjects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
+    // to use .where('userId', '==', '123') .orderBy('projectId') we have to add indexes in firebase
     firebase
       .firestore()
       .collection('projects')

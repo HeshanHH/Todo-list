@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelectedProjectValue, useProjectsValue } from '../context/index';
-//import { IndividualProject } from './IndividualProject';
+import { IndividualProject } from './IndividualProject';
 
 export const Projects = ({ activeValue = null }) => {
   const [active, setActive] = useState(activeValue);
@@ -38,7 +38,8 @@ export const Projects = ({ activeValue = null }) => {
             }
           }}
         >
-          {/* <IndividualProject project={project} /> */}
+          {/* pass project as a prop */}
+          <IndividualProject project={project} />
         </div>
         {JSON.stringify(projects)}
       </li>
