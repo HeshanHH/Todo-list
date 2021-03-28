@@ -50,7 +50,7 @@ export const useTasks = (selectedProject) => {
   return { tasks, archivedTasks };
 };
 
-export const useProject = () => {
+export const useProjects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {

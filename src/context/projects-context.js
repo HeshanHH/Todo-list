@@ -1,10 +1,10 @@
 import React, { createContext, useContext } from 'react';
-import { useProject } from '../hooks/index';
-// contextAPI
+//import PropTypes from 'prop-types';
+import { useProjects } from '../hooks/index';
 
 export const ProjectsContext = createContext();
 export const ProjectsProvider = ({ children }) => {
-  const { projects, setProjects } = useProject();
+  const { projects, setProjects } = useProjects();
 
   return (
     <ProjectsContext.Provider value={{ projects, setProjects }}>
@@ -12,4 +12,9 @@ export const ProjectsProvider = ({ children }) => {
     </ProjectsContext.Provider>
   );
 };
+
 export const useProjectsValue = () => useContext(ProjectsContext);
+
+// ProjectsProvider.propTypes = {
+//   children: PropTypes.node.isRequired,
+// };
